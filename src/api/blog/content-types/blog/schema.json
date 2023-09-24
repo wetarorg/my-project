@@ -25,14 +25,32 @@
       "type": "date"
     },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "bike review",
+        "car review",
+        "rider tips",
+        "technical tips",
+        "TVS championship",
+        "suzuki endurance",
+        "KTM RC cup",
+        "GT Cup",
+        "Honda Racing"
+      ]
+    },
+    "author": {
+      "type": "string"
     }
   }
 }

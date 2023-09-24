@@ -693,6 +693,20 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text;
     Date: Attribute.Date;
     thumbnail: Attribute.Media;
+    Category: Attribute.Enumeration<
+      [
+        'bike review',
+        'car review',
+        'rider tips',
+        'technical tips',
+        'TVS championship',
+        'suzuki endurance',
+        'KTM RC cup',
+        'GT Cup',
+        'Honda Racing'
+      ]
+    >;
+    author: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
