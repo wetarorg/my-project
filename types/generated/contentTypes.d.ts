@@ -707,13 +707,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       ]
     >;
     author: Attribute.String;
-    post: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbarBaloon';
-        }
-      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
