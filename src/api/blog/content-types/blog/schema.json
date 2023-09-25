@@ -51,6 +51,13 @@
     },
     "author": {
       "type": "string"
+    },
+    "post": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

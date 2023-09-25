@@ -4,7 +4,8 @@
   "info": {
     "singularName": "video",
     "pluralName": "videos",
-    "displayName": "Video"
+    "displayName": "Video",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,15 @@
     "Title": {
       "type": "string"
     },
-    "Category": {
-      "type": "string"
-    },
     "url": {
       "type": "string"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "bike",
+        "car"
+      ]
     }
   }
 }
