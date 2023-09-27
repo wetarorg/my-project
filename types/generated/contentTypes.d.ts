@@ -723,6 +723,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     singularName: 'course';
     pluralName: 'courses';
     displayName: 'course';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -732,10 +733,12 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     description: Attribute.Text;
     primaryimage: Attribute.Media;
     programoutcome: Attribute.RichText;
-    images: Attribute.Media;
     venue: Attribute.String;
     nextslot: Attribute.Date;
     duration: Attribute.String;
+    image1: Attribute.Media;
+    image2: Attribute.Media;
+    image3: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
