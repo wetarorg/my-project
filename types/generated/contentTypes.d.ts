@@ -717,6 +717,41 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiBookingBooking extends Schema.CollectionType {
+  collectionName: 'bookings';
+  info: {
+    singularName: 'booking';
+    pluralName: 'bookings';
+    displayName: 'booking';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    phoneno: Attribute.String &
+      Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::booking.booking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::booking.booking',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -841,6 +876,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::booking.booking': ApiBookingBooking;
       'api::course.course': ApiCourseCourse;
       'api::slider.slider': ApiSliderSlider;
       'api::video.video': ApiVideoVideo;
