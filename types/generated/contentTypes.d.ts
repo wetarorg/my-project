@@ -751,7 +751,11 @@ export interface ApiBookingBooking extends Schema.CollectionType {
     address: Attribute.String;
     notes: Attribute.String;
     calltime: Attribute.String;
-    preferred_brands: Attribute.JSON;
+    preferredbrands: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        ['hero', 'honda', 'bajaj', 'KTM', 'yamaha']
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

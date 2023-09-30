@@ -49,8 +49,16 @@
     "calltime": {
       "type": "string"
     },
-    "preferred_brands": {
-      "type": "json"
+    "preferredbrands": {
+      "type": "customField",
+      "options": [
+        "hero",
+        "honda",
+        "bajaj",
+        "KTM",
+        "yamaha"
+      ],
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }
