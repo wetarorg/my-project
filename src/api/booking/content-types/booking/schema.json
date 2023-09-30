@@ -34,9 +34,6 @@
         "ECU Mapping"
       ]
     },
-    "preferred_brands": {
-      "type": "text"
-    },
     "brandspecification": {
       "type": "string"
     },
@@ -51,6 +48,9 @@
     },
     "calltime": {
       "type": "string"
+    },
+    "preferred_brands": {
+      "type": "json"
     }
   }
 }

@@ -746,12 +746,12 @@ export interface ApiBookingBooking extends Schema.CollectionType {
         'ECU Mapping'
       ]
     >;
-    preferred_brands: Attribute.Text;
     brandspecification: Attribute.String;
     location: Attribute.String;
     address: Attribute.String;
     notes: Attribute.String;
     calltime: Attribute.String;
+    preferred_brands: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
