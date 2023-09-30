@@ -723,6 +723,7 @@ export interface ApiBookingBooking extends Schema.CollectionType {
     singularName: 'booking';
     pluralName: 'bookings';
     displayName: 'booking';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -734,6 +735,23 @@ export interface ApiBookingBooking extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 10;
       }>;
+    Booking: Attribute.Enumeration<
+      [
+        'new purchase',
+        'preowned bikes',
+        'new car',
+        'preowned car',
+        'bike service',
+        'car service',
+        'ECU Mapping'
+      ]
+    >;
+    preferred_brands: Attribute.Text;
+    brandspecification: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    notes: Attribute.String;
+    calltime: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

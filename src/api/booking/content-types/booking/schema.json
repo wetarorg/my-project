@@ -4,7 +4,8 @@
   "info": {
     "singularName": "booking",
     "pluralName": "bookings",
-    "displayName": "booking"
+    "displayName": "booking",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +21,36 @@
     "phoneno": {
       "type": "string",
       "maxLength": 10
+    },
+    "Booking": {
+      "type": "enumeration",
+      "enum": [
+        "new purchase",
+        "preowned bikes",
+        "new car",
+        "preowned car",
+        "bike service",
+        "car service",
+        "ECU Mapping"
+      ]
+    },
+    "preferred_brands": {
+      "type": "text"
+    },
+    "brandspecification": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "calltime": {
+      "type": "string"
     }
   }
 }
