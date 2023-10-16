@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "internships",
+  "info": {
+    "singularName": "internship",
+    "pluralName": "internships",
+    "displayName": "Internship"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "string"
+    },
+    "softwares": {
+      "type": "string"
+    }
+  }
+}

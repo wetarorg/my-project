@@ -814,6 +814,40 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiInternshipInternship extends Schema.CollectionType {
+  collectionName: 'internships';
+  info: {
+    singularName: 'internship';
+    pluralName: 'internships';
+    displayName: 'Internship';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    age: Attribute.String;
+    place: Attribute.String;
+    skills: Attribute.String;
+    softwares: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::internship.internship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::internship.internship',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Schema.CollectionType {
   collectionName: 'reviews';
   info: {
@@ -933,6 +967,7 @@ declare module '@strapi/strapi' {
       'api::blog.blog': ApiBlogBlog;
       'api::booking.booking': ApiBookingBooking;
       'api::course.course': ApiCourseCourse;
+      'api::internship.internship': ApiInternshipInternship;
       'api::review.review': ApiReviewReview;
       'api::slider.slider': ApiSliderSlider;
       'api::video.video': ApiVideoVideo;
