@@ -59,6 +59,9 @@
         "yamaha"
       ],
       "customField": "plugin::multi-select.multi-select"
+    },
+    "prefbrands": {
+      "type": "json"
     }
   }
 }
