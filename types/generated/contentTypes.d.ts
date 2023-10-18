@@ -866,6 +866,50 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarpurchaseCarpurchase extends Schema.CollectionType {
+  collectionName: 'carpurchases';
+  info: {
+    singularName: 'carpurchase';
+    pluralName: 'carpurchases';
+    displayName: 'carpurchase';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    phoneno: Attribute.String;
+    type: Attribute.String;
+    maruti: Attribute.Boolean;
+    honda: Attribute.Boolean;
+    hyundai: Attribute.Boolean;
+    tata: Attribute.Boolean;
+    mahindra: Attribute.Boolean;
+    other: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    note: Attribute.String;
+    calltime: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carpurchase.carpurchase',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carpurchase.carpurchase',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -1060,6 +1104,7 @@ declare module '@strapi/strapi' {
       'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::bikepurchase.bikepurchase': ApiBikepurchaseBikepurchase;
       'api::blog.blog': ApiBlogBlog;
+      'api::carpurchase.carpurchase': ApiCarpurchaseCarpurchase;
       'api::course.course': ApiCourseCourse;
       'api::internship.internship': ApiInternshipInternship;
       'api::review.review': ApiReviewReview;
