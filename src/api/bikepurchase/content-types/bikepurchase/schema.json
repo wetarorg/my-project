@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bikepurchases",
+  "info": {
+    "singularName": "bikepurchase",
+    "pluralName": "bikepurchases",
+    "displayName": "bikepurchase",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phoneno": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "Hero": {
+      "type": "boolean"
+    },
+    "Honda": {
+      "type": "boolean"
+    },
+    "Bajaj": {
+      "type": "boolean"
+    },
+    "KTM": {
+      "type": "boolean"
+    },
+    "TVS": {
+      "type": "boolean"
+    },
+    "otherbrand": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "calltime": {
+      "type": "string"
+    },
+    "Yamaha": {
+      "type": "boolean"
+    }
+  }
+}

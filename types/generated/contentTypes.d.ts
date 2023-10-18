@@ -780,6 +780,51 @@ export interface PluginEzformsRecipient extends Schema.CollectionType {
   };
 }
 
+export interface ApiBikepurchaseBikepurchase extends Schema.CollectionType {
+  collectionName: 'bikepurchases';
+  info: {
+    singularName: 'bikepurchase';
+    pluralName: 'bikepurchases';
+    displayName: 'bikepurchase';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    phoneno: Attribute.String;
+    type: Attribute.String;
+    Hero: Attribute.Boolean;
+    Honda: Attribute.Boolean;
+    Bajaj: Attribute.Boolean;
+    KTM: Attribute.Boolean;
+    TVS: Attribute.Boolean;
+    otherbrand: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    note: Attribute.String;
+    calltime: Attribute.String;
+    Yamaha: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bikepurchase.bikepurchase',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bikepurchase.bikepurchase',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -817,64 +862,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiBookingBooking extends Schema.CollectionType {
-  collectionName: 'bookings';
-  info: {
-    singularName: 'booking';
-    pluralName: 'bookings';
-    displayName: 'booking';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    email: Attribute.String;
-    phoneno: Attribute.String &
-      Attribute.SetMinMaxLength<{
-        maxLength: 10;
-      }>;
-    Booking: Attribute.Enumeration<
-      [
-        'new purchase',
-        'preowned bikes',
-        'new car',
-        'preowned car',
-        'bike service',
-        'car service',
-        'ECU Mapping'
-      ]
-    >;
-    brandspecification: Attribute.String;
-    location: Attribute.String;
-    address: Attribute.String;
-    notes: Attribute.String;
-    calltime: Attribute.String;
-    preferredbrands: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        ['hero', 'honda', 'bajaj', 'KTM', 'yamaha']
-      >;
-    prefbrands: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::booking.booking',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::booking.booking',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1071,8 +1058,8 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::ezforms.submission': PluginEzformsSubmission;
       'plugin::ezforms.recipient': PluginEzformsRecipient;
+      'api::bikepurchase.bikepurchase': ApiBikepurchaseBikepurchase;
       'api::blog.blog': ApiBlogBlog;
-      'api::booking.booking': ApiBookingBooking;
       'api::course.course': ApiCourseCourse;
       'api::internship.internship': ApiInternshipInternship;
       'api::review.review': ApiReviewReview;
