@@ -948,6 +948,44 @@ export interface ApiCarpurchaseCarpurchase extends Schema.CollectionType {
   };
 }
 
+export interface ApiCarserviceCarservice extends Schema.CollectionType {
+  collectionName: 'carservices';
+  info: {
+    singularName: 'carservice';
+    pluralName: 'carservices';
+    displayName: 'Carservice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phone: Attribute.String;
+    email: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    car: Attribute.String;
+    model: Attribute.String;
+    issue: Attribute.String;
+    servicelocation: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::carservice.carservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::carservice.carservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -1144,6 +1182,7 @@ declare module '@strapi/strapi' {
       'api::bikeservice.bikeservice': ApiBikeserviceBikeservice;
       'api::blog.blog': ApiBlogBlog;
       'api::carpurchase.carpurchase': ApiCarpurchaseCarpurchase;
+      'api::carservice.carservice': ApiCarserviceCarservice;
       'api::course.course': ApiCourseCourse;
       'api::internship.internship': ApiInternshipInternship;
       'api::review.review': ApiReviewReview;

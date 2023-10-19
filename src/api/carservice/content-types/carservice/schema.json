@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carservices",
+  "info": {
+    "singularName": "carservice",
+    "pluralName": "carservices",
+    "displayName": "Carservice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "car": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "issue": {
+      "type": "string"
+    },
+    "servicelocation": {
+      "type": "string"
+    }
+  }
+}
