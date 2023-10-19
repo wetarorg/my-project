@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ec_umappings",
+  "info": {
+    "singularName": "ec-umapping",
+    "pluralName": "ec-umappings",
+    "displayName": "ECUmapping"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "ecuservice": {
+      "type": "string"
+    }
+  }
+}

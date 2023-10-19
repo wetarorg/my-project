@@ -1026,6 +1026,41 @@ export interface ApiCourseCourse extends Schema.CollectionType {
   };
 }
 
+export interface ApiEcUmappingEcUmapping extends Schema.CollectionType {
+  collectionName: 'ec_umappings';
+  info: {
+    singularName: 'ec-umapping';
+    pluralName: 'ec-umappings';
+    displayName: 'ECUmapping';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phone: Attribute.String;
+    email: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    ecuservice: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ec-umapping.ec-umapping',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ec-umapping.ec-umapping',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiInternshipInternship extends Schema.CollectionType {
   collectionName: 'internships';
   info: {
@@ -1184,6 +1219,7 @@ declare module '@strapi/strapi' {
       'api::carpurchase.carpurchase': ApiCarpurchaseCarpurchase;
       'api::carservice.carservice': ApiCarserviceCarservice;
       'api::course.course': ApiCourseCourse;
+      'api::ec-umapping.ec-umapping': ApiEcUmappingEcUmapping;
       'api::internship.internship': ApiInternshipInternship;
       'api::review.review': ApiReviewReview;
       'api::slider.slider': ApiSliderSlider;
