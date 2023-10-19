@@ -825,6 +825,44 @@ export interface ApiBikepurchaseBikepurchase extends Schema.CollectionType {
   };
 }
 
+export interface ApiBikeserviceBikeservice extends Schema.CollectionType {
+  collectionName: 'bikeservices';
+  info: {
+    singularName: 'bikeservice';
+    pluralName: 'bikeservices';
+    displayName: 'bikeservice';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phone: Attribute.String;
+    email: Attribute.String;
+    location: Attribute.String;
+    address: Attribute.String;
+    bike: Attribute.String;
+    model: Attribute.String;
+    issue: Attribute.String;
+    servicelocation: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bikeservice.bikeservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bikeservice.bikeservice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -1103,6 +1141,7 @@ declare module '@strapi/strapi' {
       'plugin::ezforms.submission': PluginEzformsSubmission;
       'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::bikepurchase.bikepurchase': ApiBikepurchaseBikepurchase;
+      'api::bikeservice.bikeservice': ApiBikeserviceBikeservice;
       'api::blog.blog': ApiBlogBlog;
       'api::carpurchase.carpurchase': ApiCarpurchaseCarpurchase;
       'api::course.course': ApiCourseCourse;

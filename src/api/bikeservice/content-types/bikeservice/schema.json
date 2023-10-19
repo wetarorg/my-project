@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bikeservices",
+  "info": {
+    "singularName": "bikeservice",
+    "pluralName": "bikeservices",
+    "displayName": "bikeservice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "bike": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "issue": {
+      "type": "string"
+    },
+    "servicelocation": {
+      "type": "string"
+    }
+  }
+}
