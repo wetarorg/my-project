@@ -1067,6 +1067,7 @@ export interface ApiInternshipInternship extends Schema.CollectionType {
     singularName: 'internship';
     pluralName: 'internships';
     displayName: 'Internship';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1077,6 +1078,8 @@ export interface ApiInternshipInternship extends Schema.CollectionType {
     place: Attribute.String;
     skills: Attribute.String;
     softwares: Attribute.String;
+    phoneno: Attribute.String;
+    email: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
